@@ -58,3 +58,52 @@ let dakotaStates2 = states.filter(state => state.split(/\s+/).length > 1);
 
 console.log(dakotaStates);
 console.log(dakotaStates2)
+
+let a = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+];
+
+// reduce: Iterative solution
+function iterativeSum(array) {
+    let total = 0;
+    array.forEach(num => total += num);
+    return total;
+}
+
+console.log(iterativeSum(a));
+
+// reduce: Functional solution
+function functionalSum(array) {
+    return array.reduce((total, n) => total += n);
+}
+
+console.log(functionalSum(a));
+
+// reduce object: Imperative solution
+function imperativeLengths(states) {
+    let lengths = {};
+    states.forEach(state => {
+        lengths[state] = state.length;
+    });
+    return lengths;
+}
+console.log(imperativeLengths(states));
+
+// reduce object: functional solution
+function functionalLengths(states) {
+    return states.reduce((lengths, state) => {
+        lengths[state] = state.length;
+        return lengths;
+    }, {});
+}
+
+console.log(functionalLengths(states));
