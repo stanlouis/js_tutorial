@@ -31,3 +31,30 @@ function urlMap(states) {
 }
 
 console.log(urlMap(states));
+
+// filter: Imperative version
+function imperativeFilter(states) {
+    let singleWordStates = [];
+    states.forEach(state => {
+        if (state.split(/\s+/).length === 1) {
+            singleWordStates.push(state);
+        }
+    });
+    return singleWordStates;
+}
+
+console.log(imperativeFilter(states));
+
+// filter: Functional version
+function functionalFilter(states) {
+    return states.filter(state => state.split(/\s+/).length === 1);
+}
+
+console.log(functionalFilter(states));
+
+let dakotaStates = states.filter(state => state.includes('Dakota'));
+
+let dakotaStates2 = states.filter(state => state.split(/\s+/).length > 1);
+
+console.log(dakotaStates);
+console.log(dakotaStates2)
