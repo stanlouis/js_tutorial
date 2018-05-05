@@ -1,9 +1,9 @@
 // Reverses a string.
 function reverse(string) {
-    return string
-        .split('')
+    return Array
+        .from(string)
         .reverse()
-        .join('');
+        .join("");
 }
 
 // Returns true for a palindrome, false otherwise.
